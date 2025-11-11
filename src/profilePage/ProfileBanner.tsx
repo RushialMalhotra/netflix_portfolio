@@ -3,7 +3,7 @@ import "./ProfileBanner.css";
 
 const ProfileBanner: React.FC = () => {
   const linkedinUrl = "https://www.linkedin.com/in/rushial-malhotra/";
-  const resumeUrl = "/Rushial_Malhotra_Resume.pdf";
+  const resumeUrl = "https://www.datocms-assets.com/181937/1762825499-rushial_businessanalyst_resume.pdf";
 
   const handleResumeClick = () => window.open(resumeUrl, "_blank");
   const handleLinkedinClick = () => window.open(linkedinUrl, "_blank");
