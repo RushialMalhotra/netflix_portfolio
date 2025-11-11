@@ -2,7 +2,9 @@ import { request, gql } from 'graphql-request';
 
 const DATOCMS_ENDPOINT = 'https://graphql.datocms.com/';
 const API_TOKEN = process.env.REACT_APP_DATOCMS_READONLY_TOKEN;
-const DATOCMS_ENV = process.env.REACT_APP_DATOCMS_ENVIRONMENT || 'master';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const DATOCMS_ENV = process.env.REACT_APP_DATOCMS_ENVIRONMENT;
+
 
 interface WorkPermit {
   statusType: string;
