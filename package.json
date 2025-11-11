@@ -2,6 +2,10 @@
   "name": "netflix_portfolio",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+  "node": "18.x"
+},
+
   "dependencies": {
     "@datocms/cma-client": "^5.1.26",
     "@testing-library/jest-dom": "^5.17.0",
