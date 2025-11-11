@@ -1,42 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- META BASE -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Full Stack Developer @ Kajima" />
-    <meta name="author" content="Sumanth Samala" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- SITE INFO -->
+    <title>Rushial Malhotra — Portfolio</title>
+    <meta name="description" content="Business Analytics | Turning raw data into business clarity" />
+    <meta name="author" content="Rushial Malhotra" />
     <meta
       name="keywords"
-      content="Fullstack Developer,Front end,Backend Developer, Developer, ReactJS , Reactjs sumanth, reactjs samala, Sumanth, Sumanth Samala, sumanth , sumanth samala, samala sumanth, samala sumanth developer, samala sumanth banglore, sumanth developer, sumanth united kingdom, sumanth samala psw, sumanth samala masters, sumanth samala java developer, sumanth java developer"
+      content="Business Analyst, Data Analytics, Data Visualization, Predictive Modelling, Basel III, Basel IV, RegTech, Python, SQL, Tableau, Rushial, Rushial Malhotra, University College Dublin, UCD, Business Analytics, Machine Learning, Forecasting, Optimisation"
     />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <title>Sumanth Samala</title>
+
+    <!-- CANONICAL + OG -->
+    <link rel="canonical" href="https://rushialmalhotra.vercel.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Rushial Malhotra — Portfolio" />
+    <meta property="og:description" content="Business Analytics | Turning raw data into business clarity" />
+    <meta property="og:url" content="https://rushialmalhotra.vercel.app/" />
+    <meta property="og:image" content="https://rushialmalhotra.vercel.app/media/profile.png" />
+
+    <!-- GOOGLE SEARCH CONSOLE -->
+    <meta name="google-site-verification" content="%REACT_APP_GSC_TOKEN%" />
+
+    <!-- LINKEDIN INSIGHT TAG -->
+    <script>
+      (function () {
+        var pid = "%REACT_APP_LINKEDIN_TAG_ID%";
+        if (!pid) return;
+        window._linkedin_partner_id = pid;
+        window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+        window._linkedin_data_partner_ids.push(pid);
+        var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript";
+        b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);
+      })();
+    </script>
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display: none;"
+        alt=""
+        src="https://px.ads.linkedin.com/collect/?pid=%REACT_APP_LINKEDIN_TAG_ID%&fmt=gif"
+      />
+    </noscript>
+
+    <!-- GOOGLE ANALYTICS (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NR05ZT5H3"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-1NR05ZT5H3');
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-1NR05ZT5H3");
     </script>
+
+    <!-- JSON-LD PERSON SCHEMA -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Rushial Malhotra",
+      "jobTitle": "Business Analyst",
+      "url": "https://rushialmalhotra.vercel.app/",
+      "image": "https://rushialmalhotra.vercel.app/media/profile.png",
+      "sameAs": [
+        "https://www.linkedin.com/in/rushial-malhotra",
+        "https://github.com/RushialMalhotra"
+      ],
+      "description": "Business Analytics | Turning raw data into business clarity"
+    }
+    </script>
+
+    <!-- RSS + SITEMAP -->
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+    <!-- FAVICON -->
+    <link rel="icon" href="/favicon.ico" />
   </head>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
     <!--
       This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
       The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
+      Edit meta tags, analytics, and SEO info above as required.
     -->
   </body>
 </html>

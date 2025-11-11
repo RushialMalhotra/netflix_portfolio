@@ -1,0 +1,27 @@
+{
+  "$schema": "https://unpkg.com/@datocms/cli/schema/config-file.v2.json",
+  "migrationsDir": "./migrations",
+  "profiles": {
+    "main": {
+      "apiToken": "78aafe090ade0eb1f28b30aa77bbab",
+      "logLevel": "NONE",
+      "migrations": {
+        "directory": "./migrations",
+        "modelApiKey": "78aafe090ade0eb1f28b30aa77bbab",
+        "template": "",
+        "tsconfig": ""
+      }
+    },
+    "default": {
+      "apiToken": "78aafe090ade0eb1f28b30aa77bbab",
+      "logLevel": "NONE",
+      "migrations": {
+        "directory": "./defaultMigrations",
+        "modelApiKey": "78aafe090ade0eb1f28b30aa77bbab",
+        "template": "",
+        "tsconfig": ""
+      }
+    }
+  },
+  "defaultProfile": "main"
+}

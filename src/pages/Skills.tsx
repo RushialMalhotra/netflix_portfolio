@@ -1,76 +1,85 @@
-import React, { useEffect, useState } from 'react';
-import './Skills.css';
-import { getSkills } from '../queries/getSkills';
-
-import { FaReact, FaNodeJs, FaAws, FaDocker, FaGitAlt, FaJava } from 'react-icons/fa';
-import { SiRubyonrails, SiTypescript, SiPostgresql, SiMysql, SiKubernetes, SiGooglecloud, SiSpringboot, SiPhp, SiNetlify, SiHeroku, SiHtml5, SiCss3, SiRabbitmq, SiImessage } from 'react-icons/si';
-import { Skill } from '../types';
-
-const iconMap: { [key: string]: JSX.Element } = {
-  SiRubyonrails: <SiRubyonrails />,
-  FaNodeJs: <FaNodeJs />,
-  SiSpringboot: <SiSpringboot />,
-  FaJava: <FaJava />,
-  SiPhp: <SiPhp />,
-  FaReact: <FaReact />,
-  SiTypescript: <SiTypescript />,
-  FaAws: <FaAws />,
-  FaDocker: <FaDocker />,
-  SiPostgresql: <SiPostgresql />,
-  SiMysql: <SiMysql />,
-  SiKubernetes: <SiKubernetes />,
-  SiGooglecloud: <SiGooglecloud />,
-  SiHeroku: <SiHeroku />,
-  SiNetlify: <SiNetlify />,
-  SiRabbitmq: <SiRabbitmq />,
-  SiImessage: <SiImessage />,
-};
-
+import React from "react";
+import "./Skills.css";
+import {
+  FaPython,
+  FaDatabase,
+  FaReact,
+  FaJsSquare,
+  FaChartBar,
+  FaCloud,
+  FaProjectDiagram,
+  FaCodeBranch,
+  FaGitAlt,
+} from "react-icons/fa";
+import { SiTableau, SiMysql, SiJupyter, SiNumpy, SiPandas } from "react-icons/si";
 
 const Skills: React.FC = () => {
-
-  const [skillsData, setSkillsData] = useState<Skill[]>([]);
-
-  useEffect(() => {
-    async function fetchSkills() {
-      const data = await getSkills();
-      setSkillsData(data);
-    }
-
-    fetchSkills()
-  }, []);
-
-  if (skillsData.length === 0) return <div>Loading...</div>;
-
-  const skillsByCategory = skillsData.reduce((acc: any, skill: any) => {
-    if (!acc[skill.category]) acc[skill.category] = [];
-    acc[skill.category].push(skill);
-    return acc;
-  }, {});
-
+  const skillCategories = [
+    {
+      title: "Programming & Scripting",
+      skills: [
+        { name: "Python", icon: <FaPython className="skill-icon" /> },
+        { name: "JavaScript", icon: <FaJsSquare className="skill-icon" /> },
+        { name: "React.js", icon: <FaReact className="skill-icon" /> },
+      ],
+    },
+    {
+      title: "Data Analytics & BI",
+      skills: [
+        { name: "Power BI", icon: <FaChartBar className="skill-icon" /> },
+        { name: "Tableau", icon: <SiTableau className="skill-icon" /> },
+        { name: "SQL (MySQL)", icon: <SiMysql className="skill-icon" /> },
+      ],
+    },
+    {
+      title: "Data Science & ML Tools",
+      skills: [
+        { name: "NumPy", icon: <SiNumpy className="skill-icon" /> },
+        { name: "Pandas", icon: <SiPandas className="skill-icon" /> },
+        { name: "Jupyter Notebooks", icon: <SiJupyter className="skill-icon" /> },
+      ],
+    },
+    {
+      title: "Cloud, DevOps & Version Control",
+      skills: [
+        { name: "AWS", icon: <FaCloud className="skill-icon" /> },
+        { name: "Git", icon: <FaGitAlt className="skill-icon" /> },
+        { name: "CI/CD Pipelines", icon: <FaCodeBranch className="skill-icon" /> },
+      ],
+    },
+    {
+      title: "Project Management & Modeling",
+      skills: [
+        { name: "Process Mapping", icon: <FaProjectDiagram className="skill-icon" /> },
+        { name: "Data Modeling", icon: <FaDatabase className="skill-icon" /> },
+      ],
+    },
+  ];
 
   return (
-    <div className="skills-container">
-      {Object.keys(skillsByCategory).map((category, index) => (
-        <div key={index} className="skill-category">
-          <h3 className="category-title">{category}</h3>
-          <div className="skills-grid">
-            {skillsByCategory[category].map((skill: any, idx: number) => (
-              <div key={idx} className="skill-card">
-                <div className="icon">{iconMap[skill.icon] || <FaReact />}</div>
-                <h3 className="skill-name">
-                  {skill.name.split('').map((letter: any, i: number) => (
-                    <span key={i} className="letter" style={{ animationDelay: `${i * 0.05}s` }}>
-                      {letter}
-                    </span>
-                  ))}
-                </h3>
-                <p className="skill-description">{skill.description}</p>
+    <div className="skills-wrapper">
+      <div className="skills-container glass">
+        <h1 className="skills-title">Technical Skills</h1>
+        <p className="skills-subtitle">
+          Core tools and technologies I use across analytics, BI, and full-stack data projects.
+        </p>
+
+        <div className="skills-grid">
+          {skillCategories.map((category, index) => (
+            <div key={index} className="skills-category">
+              <h2 className="category-title">{category.title}</h2>
+              <div className="skills-list">
+                {category.skills.map((skill, idx) => (
+                  <div key={idx} className="skill-item">
+                    {skill.icon}
+                    <span>{skill.name}</span>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
   );
 };

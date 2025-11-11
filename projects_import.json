@@ -1,0 +1,107 @@
+[
+    {
+      "itemType": "EZox1NZHSXOA44ExNUyRWA",
+      "project_title": "RegFlowAI – Regulatory Capital Automation under Basel III/IV",
+      "project_description": "AI-driven RegTech solution automating Basel III/IV capital computation and risk reporting.\n\nDesigned a compliance engine translating Basel III/IV and SA-CCR/FRTB frameworks into structured business logic and capital models.\nBuilt an automated computation layer for EAD, RWA, and capital ratios with integrated stress testing and validation.\nImplemented data lineage and audit-ready controls, ensuring transparent regulatory traceability.\nReduced manual compliance effort by 40% through rule-driven automation and risk model standardization.\nDemonstrated advanced RegTech, financial analytics, and data governance expertise.",
+      "project_primary_link": "https://colab.research.google.com/drive/1hbcI7hWff6kpPMVvU6QDQ_rsOLenA3Kj?usp=sharing",
+      "project_notebook_link": "https://colab.research.google.com/drive/1hbcI7hWff6kpPMVvU6QDQ_rsOLenA3Kj",
+      "project_tableau_link": "",
+      "project_demo_link": "",
+      "project_thumbnail": null,
+      "project_gallery": [],
+      "project_tags": "Python, Pandas, Financial Modeling, Risk Analytics, Basel Frameworks",
+      "project_seo_settings": {}
+    },
+    {
+      "itemType": "EZox1NZHSXOA44ExNUyRWA",
+      "project_title": "Dublin Rent Intelligence – Predictive Housing Analytics",
+      "project_description": "Machine-learning model forecasting Dublin housing rental trends for market insights.\n\nDeveloped a regression-based predictive analytics model using multi-source housing data.\nEngineered features and applied normalization to enhance prediction reliability and variance control.\nCreated geospatial dashboards visualizing affordability zones and rental hotspots.\nAutomated data extraction and model retraining pipelines to maintain live accuracy.\nApplied urban analytics and predictive modeling for real-estate decision intelligence.",
+      "project_primary_link": "https://colab.research.google.com/drive/1PDIbDbltBAFFWaIk74AbYC2dEsalfkDu?usp=sharing",
+      "project_notebook_link": "https://colab.research.google.com/drive/1PDIbDbltBAFFWaIk74AbYC2dEsalfkDu",
+      "project_tableau_link": "",
+      "project_demo_link": "",
+      "project_thumbnail": null,
+      "project_gallery": [],
+      "project_tags": "Python, Scikit-learn, Geopandas, Regression Modeling, Power BI",
+      "project_seo_settings": {}
+    },
+    {
+      "itemType": "EZox1NZHSXOA44ExNUyRWA",
+      "project_title": "Coffee Shop 360 – Process Optimization & Cost Reduction",
+      "project_description": "End-to-end business intelligence project using process mining and predictive analytics.\n\nConducted Celonis process mining to identify workflow bottlenecks across order handling, logistics, and staffing.\nBuilt a Linear Programming optimization model reducing courier cost by 30% and delivery cycle time by 12 minutes.\nDesigned KPI dashboards for operational efficiency and service throughput tracking.\nApplied prescriptive analytics to align scheduling, resource allocation, and customer satisfaction.\nDemonstrated mastery of process mining, BI visualization, and decision analytics.",
+      "project_primary_link": "sandbox:/mnt/data/Business_Insights_of_small_businesses(Coffee_shop)%20(1).pptx",
+      "project_notebook_link": "",
+      "project_tableau_link": "",
+      "project_demo_link": "",
+      "project_thumbnail": null,
+      "project_gallery": [],
+      "project_tags": "Celonis, Linear Programming, Power BI, Python, Optimization",
+      "project_seo_settings": {}
+    },
+    {
+      "itemType": "EZox1NZHSXOA44ExNUyRWA",
+      "project_title": "Data Quality Ops – Automated Cleaning Framework (KNIME + Python)",
+      "project_description": "Data governance pipeline standardizing preprocessing, quality checks, and schema validation.\n\nDeveloped a modular KNIME-based ETL pipeline automating missing value handling, normalization, and categorical standardization.\nIntegrated Python scripts for validation, duplicate removal, and type consistency enforcement.\nReduced preprocessing time by 85% and improved data integrity by 82%.\nDelivered governance-ready documentation supporting repeatable, auditable workflows.\nShowcased strong data engineering, governance, and process automation capability.",
+      "project_primary_link": "",
+      "project_notebook_link": "",
+      "project_tableau_link": "",
+      "project_demo_link": "",
+      "project_thumbnail": null,
+      "project_gallery": [],
+      "project_tags": "KNIME, Python, ETL, Data Validation, Data Governance",
+      "project_seo_settings": {}
+    },
+    {
+      "itemType": "EZox1NZHSXOA44ExNUyRWA",
+      "project_title": "Ecoshop Analytics – Sustainability & Consumer Insight Platform",
+      "project_description": "Full-stack sustainability analytics prototype promoting eco-friendly consumer decisions.\n\nBuilt a data-driven e-commerce analytics platform integrating CO₂ tracking and behavioral segmentation.\nApplied predictive modeling to identify sustainability-focused consumer segments.\nDesigned Power BI dashboards quantifying carbon impact, purchase trends, and eco-product performance.\nConducted A/B testing for UX and conversion optimization of sustainable product recommendations.\nIllustrated application of data analytics and behavioral economics in green commerce.",
+      "project_primary_link": "",
+      "project_notebook_link": "",
+      "project_tableau_link": "",
+      "project_demo_link": "",
+      "project_thumbnail": null,
+      "project_gallery": [],
+      "project_tags": "Power BI, Predictive Modeling, UX Testing, SQL, Sustainability Analytics",
+      "project_seo_settings": {}
+    },
+    {
+      "itemType": "EZox1NZHSXOA44ExNUyRWA",
+      "project_title": "Airbnb Demand Forecasting – Market Dynamics & Pricing Analytics",
+      "project_description": "Predictive model for Airbnb occupancy and pricing optimization using regression and BI visualization.\n\nBuilt a machine-learning regression model to forecast occupancy and price elasticity.\nConducted EDA and clustering to isolate key demand drivers including seasonality, amenities, and geography.\nOptimized accuracy via feature engineering and hyperparameter tuning.\nDeveloped Power BI dashboards translating model outcomes into actionable pricing insights.\nDemonstrated market analytics and data storytelling for travel and hospitality.",
+      "project_primary_link": "https://lnkd.in/dSjxzyTV",
+      "project_notebook_link": "",
+      "project_tableau_link": "",
+      "project_demo_link": "",
+      "project_thumbnail": null,
+      "project_gallery": [],
+      "project_tags": "Python, Power BI, Feature Engineering, Clustering, Regression Analysis",
+      "project_seo_settings": {}
+    },
+    {
+      "itemType": "EZox1NZHSXOA44ExNUyRWA",
+      "project_title": "Visual Analytics for Decision Making – Titanic Case Study",
+      "project_description": "Data visualization experiment showing how chart design influences executive decision-making.\n\nCompared multiple visualization techniques (bar, violin, heatmap) to test analytical bias.\nCreated interactive dashboards visualizing passenger survival data by class, age, and title.\nHighlighted the role of visual cognition in business storytelling and interpretation.\nBuilt decision-impact guidelines improving data presentation in analytics reports.\nReinforced expertise in data visualization, interpretation, and communication strategy.",
+      "project_primary_link": "sandbox:/mnt/data/CL24%20(3).pptx",
+      "project_notebook_link": "",
+      "project_tableau_link": "",
+      "project_demo_link": "",
+      "project_thumbnail": null,
+      "project_gallery": [],
+      "project_tags": "Power BI, Tableau, Python, Statistics, Data Visualization",
+      "project_seo_settings": {}
+    },
+    {
+      "itemType": "EZox1NZHSXOA44ExNUyRWA",
+      "project_title": "Rethinking COVID Metrics – Ethical Analytics and Normalization",
+      "project_description": "Data normalization and ethics project addressing misinterpretation of per-capita pandemic metrics.\n\nBuilt a statistical normalization framework correcting for population density and testing bias.\nConducted comparative time-series analytics across regions to uncover misrepresented trends.\nCreated interactive dashboards for data transparency and public reporting.\nAdvocated responsible data communication to improve policy-level analytics.\nDemonstrated ethical analytics and bias mitigation in data interpretation.",
+      "project_primary_link": "https://lnkd.in/dSruKzpb",
+      "project_notebook_link": "",
+      "project_tableau_link": "",
+      "project_demo_link": "",
+      "project_thumbnail": null,
+      "project_gallery": [],
+      "project_tags": "Python, Time Series, Data Ethics, Visualization, Public Analytics",
+      "project_seo_settings": {}
+    }
+  ]
+  

@@ -3,34 +3,54 @@
 export interface ProfileBanner {
   backgroundImage: { url: string };
   headline: string;
-  resumeLink: {
-    url: string;
-  };
+  resumeLink: { url: string };
   linkedinLink: string;
   profileSummary: string;
+
+  tagline: string;
+  githubLink: string;
+  profileImage: {
+    responsiveImage: {
+      src: string;
+      width: number;
+      height: number;
+      alt: string;
+    };
+  };
+  seoSettings?: {
+    title?: string;
+    description?: string;
+    image?: {
+      url: string;
+    };
+  };
 }
 
 export interface WorkPermit {
   visaStatus: string;
-  expiryDate: Date;
+  expiryDate: string;
   summary: string;
   additionalInfo: string;
 }
 
 export interface TimelineItem {
-  timelineType: 'work' | 'education';
+  timelineType: "work" | "education";
   name: string;
   title: string;
   techStack: string;
-  summaryPoints: string[];
+  summaryPoints: string[];  // ✅ correct type (array of lines)
   dateRange: string;
+  displayOrder?: number;
 }
+
 
 export interface Project {
   title: string;
   description: string;
-  techUsed: string;
+  techUsed: string[];
   image: { url: string };
+  projectLink?: string;
+  githubLink?: string;
 }
 
 export interface Certification {
@@ -52,9 +72,12 @@ export interface ContactMe {
   phoneNumber: string;
 }
 
-export interface Skill { 
-  name: string;
-  category: string;
-  description: string;
-  icon: string;
+export interface Skill {
+  skillName: string;
+  skillCategory: string;
+  skillIconKey: string;
+  skillLevel: number;
+  skillIcon?: {
+    url: string;
+  } | null;
 }

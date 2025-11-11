@@ -1,12 +1,9 @@
-import { GraphQLClient } from 'graphql-request';
-import { getDatoCmsToken } from './getDatoCmsToken';
+import { GraphQLClient } from "graphql-request";
 
-const DATO_CMS_ENDPOINT = 'https://graphql.datocms.com/';
-const DATO_CMS_API_TOKEN = getDatoCmsToken();
-
-const datoCMSClient = new GraphQLClient(DATO_CMS_ENDPOINT, {
+const datoCMSClient = new GraphQLClient("https://graphql.datocms.com", {
   headers: {
-    Authorization: `Bearer ${DATO_CMS_API_TOKEN}`,
+    Authorization: `Bearer ${process.env.REACT_APP_DATOCMS_READONLY_TOKEN}`,
+    "X-Environment": process.env.REACT_APP_DATOCMS_ENVIRONMENT || "main",
   },
 });
 

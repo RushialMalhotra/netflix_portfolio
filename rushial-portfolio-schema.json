@@ -1,0 +1,701 @@
+{
+  "version": "2",
+  "entities": [
+    {
+      "id": "profile_banner",
+      "type": "item_type",
+      "attributes": {
+        "name": "Profile Banner",
+        "api_key": "profilebanner",
+        "singleton": true,
+        "sortable": false,
+        "draft_mode_active": true,
+        "all_locales_required": false,
+        "collection_appearance": "table"
+      },
+      "relationships": {
+        "fields": {
+          "data": [
+            {
+              "id": "pb_headline",
+              "type": "field"
+            },
+            {
+              "id": "pb_tagline",
+              "type": "field"
+            },
+            {
+              "id": "pb_summary",
+              "type": "field"
+            },
+            {
+              "id": "pb_profile_image",
+              "type": "field"
+            },
+            {
+              "id": "pb_resume",
+              "type": "field"
+            },
+            {
+              "id": "pb_linkedin",
+              "type": "field"
+            },
+            {
+              "id": "pb_github",
+              "type": "field"
+            },
+            {
+              "id": "pb_seo",
+              "type": "field"
+            }
+          ]
+        },
+        "fieldsets": {
+          "data": []
+        }
+      }
+    },
+    {
+      "id": "pb_headline",
+      "type": "field",
+      "attributes": {
+        "label": "Headline",
+        "field_type": "string",
+        "api_key": "headline",
+        "validators": {
+          "required": {}
+        }
+      }
+    },
+    {
+      "id": "pb_tagline",
+      "type": "field",
+      "attributes": {
+        "label": "Tagline",
+        "field_type": "string",
+        "api_key": "tagline"
+      }
+    },
+    {
+      "id": "pb_summary",
+      "type": "field",
+      "attributes": {
+        "label": "Profile Summary",
+        "field_type": "text",
+        "api_key": "profile_summary"
+      }
+    },
+    {
+      "id": "pb_profile_image",
+      "type": "field",
+      "attributes": {
+        "label": "Profile Image",
+        "field_type": "file",
+        "api_key": "profile_image",
+        "validators": {
+          "extension": {
+            "predefined_list": "image"
+          }
+        }
+      }
+    },
+    {
+      "id": "pb_resume",
+      "type": "field",
+      "attributes": {
+        "label": "Resume (PDF)",
+        "field_type": "file",
+        "api_key": "resume_link",
+        "validators": {
+          "extension": {
+            "extensions": [
+              "pdf"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "pb_linkedin",
+      "type": "field",
+      "attributes": {
+        "label": "LinkedIn URL",
+        "field_type": "string",
+        "api_key": "linkedin_link"
+      }
+    },
+    {
+      "id": "pb_github",
+      "type": "field",
+      "attributes": {
+        "label": "GitHub URL",
+        "field_type": "string",
+        "api_key": "github_link"
+      }
+    },
+    {
+      "id": "pb_seo",
+      "type": "field",
+      "attributes": {
+        "label": "SEO",
+        "field_type": "seo",
+        "api_key": "seo"
+      }
+    },
+    {
+      "id": "project",
+      "type": "item_type",
+      "attributes": {
+        "name": "Project",
+        "api_key": "project",
+        "singleton": false,
+        "sortable": true,
+        "draft_mode_active": true
+      },
+      "relationships": {
+        "fields": {
+          "data": [
+            {
+              "id": "pr_title",
+              "type": "field"
+            },
+            {
+              "id": "pr_description",
+              "type": "field"
+            },
+            {
+              "id": "pr_project_link",
+              "type": "field"
+            },
+            {
+              "id": "pr_notebook_link",
+              "type": "field"
+            },
+            {
+              "id": "pr_tableau_link",
+              "type": "field"
+            },
+            {
+              "id": "pr_demo_link",
+              "type": "field"
+            },
+            {
+              "id": "pr_thumbnail",
+              "type": "field"
+            },
+            {
+              "id": "pr_images",
+              "type": "field"
+            },
+            {
+              "id": "pr_tags",
+              "type": "field"
+            },
+            {
+              "id": "pr_seo",
+              "type": "field"
+            }
+          ]
+        },
+        "fieldsets": {
+          "data": []
+        }
+      }
+    },
+    {
+      "id": "pr_title",
+      "type": "field",
+      "attributes": {
+        "label": "Title",
+        "field_type": "string",
+        "api_key": "title",
+        "validators": {
+          "required": {}
+        }
+      }
+    },
+    {
+      "id": "pr_description",
+      "type": "field",
+      "attributes": {
+        "label": "Description",
+        "field_type": "text",
+        "api_key": "description"
+      }
+    },
+    {
+      "id": "pr_project_link",
+      "type": "field",
+      "attributes": {
+        "label": "Primary Link (generic)",
+        "field_type": "string",
+        "api_key": "project_link"
+      }
+    },
+    {
+      "id": "pr_notebook_link",
+      "type": "field",
+      "attributes": {
+        "label": "Notebook Link",
+        "field_type": "string",
+        "api_key": "notebook_link"
+      }
+    },
+    {
+      "id": "pr_tableau_link",
+      "type": "field",
+      "attributes": {
+        "label": "Tableau Link",
+        "field_type": "string",
+        "api_key": "tableau_link"
+      }
+    },
+    {
+      "id": "pr_demo_link",
+      "type": "field",
+      "attributes": {
+        "label": "Demo Link",
+        "field_type": "string",
+        "api_key": "demo_link"
+      }
+    },
+    {
+      "id": "pr_thumbnail",
+      "type": "field",
+      "attributes": {
+        "label": "Thumbnail",
+        "field_type": "file",
+        "api_key": "thumbnail",
+        "validators": {
+          "extension": {
+            "predefined_list": "transformable_image"
+          }
+        }
+      }
+    },
+    {
+      "id": "pr_images",
+      "type": "field",
+      "attributes": {
+        "label": "Gallery Images",
+        "field_type": "gallery",
+        "api_key": "images",
+        "validators": {
+          "size": {
+            "min": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "pr_tags",
+      "type": "field",
+      "attributes": {
+        "label": "Tags",
+        "field_type": "string",
+        "api_key": "tags"
+      }
+    },
+    {
+      "id": "pr_seo",
+      "type": "field",
+      "attributes": {
+        "label": "SEO",
+        "field_type": "seo",
+        "api_key": "seo"
+      }
+    },
+    {
+      "id": "skill",
+      "type": "item_type",
+      "attributes": {
+        "name": "Skill",
+        "api_key": "skill",
+        "draft_mode_active": true
+      },
+      "relationships": {
+        "fields": {
+          "data": [
+            {
+              "id": "sk_name",
+              "type": "field"
+            },
+            {
+              "id": "sk_icon",
+              "type": "field"
+            },
+            {
+              "id": "sk_level",
+              "type": "field"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "sk_name",
+      "type": "field",
+      "attributes": {
+        "label": "Skill Name",
+        "field_type": "string",
+        "api_key": "skill_title"
+      }
+    },
+    {
+      "id": "sk_icon",
+      "type": "field",
+      "attributes": {
+        "label": "Skill Icon",
+        "field_type": "file",
+        "api_key": "skill_icon",
+        "validators": {
+          "extension": {
+            "predefined_list": "image"
+          }
+        }
+      }
+    },
+    {
+      "id": "sk_level",
+      "type": "field",
+      "attributes": {
+        "label": "Proficiency (0-100)",
+        "field_type": "integer",
+        "api_key": "skill_level"
+      }
+    },
+    {
+      "id": "timeline_item",
+      "type": "item_type",
+      "attributes": {
+        "name": "Timeline Item",
+        "api_key": "timeline_item",
+        "draft_mode_active": true
+      },
+      "relationships": {
+        "fields": {
+          "data": [
+            {
+              "id": "tl_year",
+              "type": "field"
+            },
+            {
+              "id": "tl_title",
+              "type": "field"
+            },
+            {
+              "id": "tl_description",
+              "type": "field"
+            },
+            {
+              "id": "tl_category",
+              "type": "field"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "tl_year",
+      "type": "field",
+      "attributes": {
+        "label": "Year/Range",
+        "field_type": "string",
+        "api_key": "year"
+      }
+    },
+    {
+      "id": "tl_title",
+      "type": "field",
+      "attributes": {
+        "label": "Title",
+        "field_type": "string",
+        "api_key": "title"
+      }
+    },
+    {
+      "id": "tl_description",
+      "type": "field",
+      "attributes": {
+        "label": "Description",
+        "field_type": "text",
+        "api_key": "description"
+      }
+    },
+    {
+      "id": "tl_category",
+      "type": "field",
+      "attributes": {
+        "label": "Category",
+        "field_type": "string",
+        "api_key": "category"
+      }
+    },
+    {
+      "id": "certification",
+      "type": "item_type",
+      "attributes": {
+        "name": "Certification",
+        "api_key": "certification",
+        "draft_mode_active": true
+      },
+      "relationships": {
+        "fields": {
+          "data": [
+            {
+              "id": "ce_name",
+              "type": "field"
+            },
+            {
+              "id": "ce_org",
+              "type": "field"
+            },
+            {
+              "id": "ce_issue",
+              "type": "field"
+            },
+            {
+              "id": "ce_link",
+              "type": "field"
+            },
+            {
+              "id": "ce_image",
+              "type": "field"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ce_name",
+      "type": "field",
+      "attributes": {
+        "label": "Name",
+        "field_type": "string",
+        "api_key": "name"
+      }
+    },
+    {
+      "id": "ce_org",
+      "type": "field",
+      "attributes": {
+        "label": "Organization",
+        "field_type": "string",
+        "api_key": "organization"
+      }
+    },
+    {
+      "id": "ce_issue",
+      "type": "field",
+      "attributes": {
+        "label": "Issue Date",
+        "field_type": "date",
+        "api_key": "issue_date"
+      }
+    },
+    {
+      "id": "ce_link",
+      "type": "field",
+      "attributes": {
+        "label": "Credential Link",
+        "field_type": "string",
+        "api_key": "credential_link"
+      }
+    },
+    {
+      "id": "ce_image",
+      "type": "field",
+      "attributes": {
+        "label": "Certificate Image",
+        "field_type": "file",
+        "api_key": "certificate_image",
+        "validators": {
+          "extension": {
+            "predefined_list": "image"
+          }
+        }
+      }
+    },
+    {
+      "id": "work_permit",
+      "type": "item_type",
+      "attributes": {
+        "name": "Work Permit",
+        "api_key": "workpermit",
+        "singleton": true,
+        "draft_mode_active": true
+      },
+      "relationships": {
+        "fields": {
+          "data": [
+            {
+              "id": "wp_country",
+              "type": "field"
+            },
+            {
+              "id": "wp_status",
+              "type": "field"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "wp_country",
+      "type": "field",
+      "attributes": {
+        "label": "Country",
+        "field_type": "string",
+        "api_key": "country"
+      }
+    },
+    {
+      "id": "wp_status",
+      "type": "field",
+      "attributes": {
+        "label": "Status",
+        "field_type": "string",
+        "api_key": "status"
+      }
+    },
+    {
+      "id": "contact_info",
+      "type": "item_type",
+      "attributes": {
+        "name": "Contact Info",
+        "api_key": "contactinfo",
+        "singleton": true,
+        "draft_mode_active": true
+      },
+      "relationships": {
+        "fields": {
+          "data": [
+            {
+              "id": "ci_email",
+              "type": "field"
+            },
+            {
+              "id": "ci_linkedin",
+              "type": "field"
+            },
+            {
+              "id": "ci_github",
+              "type": "field"
+            },
+            {
+              "id": "ci_sheet",
+              "type": "field"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ci_email",
+      "type": "field",
+      "attributes": {
+        "label": "Email",
+        "field_type": "string",
+        "api_key": "email"
+      }
+    },
+    {
+      "id": "ci_linkedin",
+      "type": "field",
+      "attributes": {
+        "label": "LinkedIn URL",
+        "field_type": "string",
+        "api_key": "linkedin"
+      }
+    },
+    {
+      "id": "ci_github",
+      "type": "field",
+      "attributes": {
+        "label": "GitHub URL",
+        "field_type": "string",
+        "api_key": "github"
+      }
+    },
+    {
+      "id": "ci_sheet",
+      "type": "field",
+      "attributes": {
+        "label": "Google Sheet Endpoint",
+        "field_type": "string",
+        "api_key": "sheet_url"
+      }
+    },
+    {
+      "id": "page",
+      "type": "item_type",
+      "attributes": {
+        "name": "Page",
+        "api_key": "page",
+        "singleton": true,
+        "draft_mode_active": true
+      },
+      "relationships": {
+        "fields": {
+          "data": [
+            {
+              "id": "pg_title",
+              "type": "field"
+            },
+            {
+              "id": "pg_struct",
+              "type": "field"
+            },
+            {
+              "id": "pg_seo",
+              "type": "field"
+            },
+            {
+              "id": "pg_seo_analysis",
+              "type": "field"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "pg_title",
+      "type": "field",
+      "attributes": {
+        "label": "Title",
+        "field_type": "string",
+        "api_key": "title",
+        "validators": {
+          "required": {}
+        }
+      }
+    },
+    {
+      "id": "pg_struct",
+      "type": "field",
+      "attributes": {
+        "label": "Structured text",
+        "field_type": "structured_text",
+        "api_key": "structured_text"
+      }
+    },
+    {
+      "id": "pg_seo",
+      "type": "field",
+      "attributes": {
+        "label": "SEO Settings & Social",
+        "field_type": "seo",
+        "api_key": "seo_settings_social"
+      }
+    },
+    {
+      "id": "pg_seo_analysis",
+      "type": "field",
+      "attributes": {
+        "label": "SEO/Readability Analysis",
+        "field_type": "json",
+        "api_key": "seo_analysis"
+      }
+    }
+  ]
+}

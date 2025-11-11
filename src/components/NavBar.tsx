@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { FaHome, FaBriefcase, FaTools, FaProjectDiagram, FaEnvelope } from 'react-icons/fa'; // Import icons
+import { FaHome, FaBriefcase, FaTools, FaProjectDiagram, FaEnvelope } from 'react-icons/fa';
 import './Navbar.css';
 import netflixLogo from '../images/logo-2.png';
 import blueImage from '../images/blue.png';
@@ -21,13 +21,8 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
-  const closeSidebar = () => {
-    setIsSidebarOpen(false);
-  };
+  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+  const closeSidebar = () => setIsSidebarOpen(false);
 
   return (
     <>
@@ -45,20 +40,27 @@ const Navbar: React.FC = () => {
           </ul>
         </div>
         <div className="navbar-right">
-          {/* Hamburger menu for mobile */}
           <div className="hamburger" onClick={toggleSidebar}>
             <div></div>
             <div></div>
             <div></div>
           </div>
-          <img src={profileImage} alt="Profile" className="profile-icon" onClick={() => { navigate('/browse') }} />
+          <img
+            src={profileImage}
+            alt="Profile"
+            className="profile-icon"
+            onClick={() => navigate('/browse')}
+          />
         </div>
       </nav>
 
       {/* Sidebar Overlay */}
-      <div className={`sidebar-overlay ${isSidebarOpen ? 'open' : ''}`} onClick={closeSidebar}></div>
+      <div
+        className={`sidebar-overlay ${isSidebarOpen ? 'open' : ''}`}
+        onClick={closeSidebar}
+      ></div>
 
-      {/* Sidebar (only visible on mobile) */}
+      {/* Sidebar */}
       <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
         <div className="sidebar-logo">
           <img src={netflixLogo} alt="Netflix Logo" />

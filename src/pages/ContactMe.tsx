@@ -1,65 +1,66 @@
-import React, { useEffect, useState } from 'react';
-import './ContactMe.css';
-import profilePic from '../images/sumanth.jpeg';
-import { FaEnvelope, FaPhoneAlt, FaCoffee, FaLinkedin } from 'react-icons/fa';
-import { ContactMe as IContactMe } from '../types';
-import { getContactMe } from '../queries/getContactMe';
+import React, { useEffect, useState } from "react";
+import "./ContactMe.css";
+import profilePlaceholder from "../images/Rushial.jpeg";
+import { FaEnvelope, FaLinkedin, FaGithub, FaPhoneAlt, FaPaperPlane } from "react-icons/fa";
+import getContactMe, { ContactInfo } from "../queries/getContactMe";
 
 const ContactMe: React.FC = () => {
-
-  const [userData, setUserData] = useState<IContactMe>()
+  const [info, setInfo] = useState<ContactInfo | null>(null);
 
   useEffect(() => {
-    async function fetchUserData() {
+    async function fetchContact() {
       const data = await getContactMe();
-      setUserData(data);
+      setInfo(data);
     }
-
-    fetchUserData();
+    fetchContact();
   }, []);
 
-  if (!userData) return <div>Loading...</div>;
+  if (!info) return <div>Loading contact info...</div>;
+
+  // ✅ Updated destructuring to match camelCase fields
+  const {
+    ciEmailAddress,
+    ciLinkedinProfile,
+    ciGithubProfile,
+    ciSheetEndpoint,
+    phoneNumber,
+    profileImage,
+  } = info;
 
   return (
     <div className="contact-container">
-      <div className="linkedin-badge-custom">
-        <img src={profilePic} alt="Sumanth Samala" className="badge-avatar" />
-        <div className="badge-content">
-          <h3 className="badge-name">{userData?.name}</h3>
-          <p className="badge-title">{userData.title}</p>
-          <p className="badge-description">
-            {userData.summary}
-          </p>
-          <p className="badge-company">{userData.companyUniversity}</p>
-          <a
-            href={userData.linkedinLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="badge-link"
-          >
-            <FaLinkedin className="linkedin-icon" /> View Profile
+      <div className="contact-card">
+        <img
+          src={profileImage?.url || profilePlaceholder}
+          alt="Rushial Malhotra"
+          className="contact-avatar"
+        />
+        <h2>Let’s Connect</h2>
+
+        <div className="contact-links">
+          <a href={`mailto:${ciEmailAddress}`}>
+            <FaEnvelope /> {ciEmailAddress}
           </a>
-        </div>
-      </div>
-      <div className="contact-header">
-        <p>I'm always up for a chat or a coffee! Feel free to reach out.</p>
-      </div>
-      <div className="contact-details">
-        <div className="contact-item">
-          <FaEnvelope className="contact-icon" />
-          <a href={`mailto:${userData.email}`} className="contact-link">
-            {userData.email}
-          </a>
-        </div>
-        <div className="contact-item">
-          <FaPhoneAlt className="contact-icon" />
-          <a href={`tel:${userData.phoneNumber}`} className="contact-link">
-            {userData.phoneNumber}
-          </a>
-        </div>
-        <div className="contact-fun">
-          <p>Or catch up over a coffee ☕</p>
-          <FaCoffee className="coffee-icon" />
+          {phoneNumber && (
+            <a href={`tel:${phoneNumber}`}>
+              <FaPhoneAlt /> {phoneNumber}
+            </a>
+          )}
+          {ciLinkedinProfile && (
+            <a href={ciLinkedinProfile} target="_blank" rel="noopener noreferrer">
+              <FaLinkedin /> LinkedIn
+            </a>
+          )}
+          {ciGithubProfile && (
+            <a href={ciGithubProfile} target="_blank" rel="noopener noreferrer">
+              <FaGithub /> GitHub
+            </a>
+          )}
+          {ciSheetEndpoint && (
+            <a href={ciSheetEndpoint} target="_blank" rel="noopener noreferrer">
+              <FaPaperPlane /> Message Form
+            </a>
+          )}
         </div>
       </div>
     </div>

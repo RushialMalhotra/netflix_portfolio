@@ -1,21 +1,56 @@
-// queries/getProjects.ts
-import datoCMSClient from './datoCMSClient';
-import { Project } from '../types';
+// src/queries/getProjects.ts
+import { GraphQLClient } from "graphql-request";
 
-const GET_PROJECTS = `
-  query {
-    allProjects(orderBy: title_ASC) {
-      title
-      description
-      techUsed
-      image {
-        url
+const DATOCMS_API_URL = "https://graphql.datocms.com/";
+const API_TOKEN = process.env.REACT_APP_DATOCMS_READONLY_TOKEN;
+
+if (!API_TOKEN) {
+  console.error("❌ Missing DatoCMS API token. Set REACT_APP_DATOCMS_READONLY_TOKEN in .env.local");
+}
+
+const datoCMSClient = new GraphQLClient(DATOCMS_API_URL, {
+  headers: {
+    Authorization: `Bearer ${API_TOKEN}`,
+  },
+});
+
+export const getProjects = async () => {
+  const QUERY = `
+    {
+      allProjects {
+        projectTitle
+        projectDescription(markdown: true)
+        projectPrimaryLink
+        projectNotebookLink
+        projectTableauLink
+        projectDemoLink
+        projectTags
+        projectThumbnail {
+          url
+          alt
+        }
+        projectGallery {
+          url
+          alt
+        }
+        projectSeoSettings {
+          title
+          description
+          image {
+            url
+          }
+        }
       }
     }
-  }
-`;
+  `;
 
-export async function getProjects(): Promise<Project[]> {
-  const data = await datoCMSClient.request<{ allProjects: Project[] }>(GET_PROJECTS);
-  return data.allProjects;
-}
+  try {
+    console.log("🔄 Fetching Projects from DatoCMS...");
+    const data = await datoCMSClient.request(QUERY);
+    console.log("✅ Projects loaded successfully");
+    return data;
+  } catch (err) {
+    console.error("🔥 DatoCMS project fetch failed:", err);
+    return { allProjects: [] };
+  }
+};

@@ -1,25 +1,39 @@
-// queries/getProfileBanner.ts
-import datoCMSClient from './datoCMSClient';
-import { ProfileBanner } from '../types';
+import datoCMSClient from "./datoCMSClient";
 
-const GET_PROFILE_BANNER = `
- {
-  profilebanner {
-    backgroundImage {
-      url
+const getProfileBanner = async () => {
+  const QUERY = `
+    {
+      profileBanner {
+        headline
+        tagline
+        profileSummary
+        linkedinLink
+        githubLink
+        resumeLink {
+          url
+        }
+        profileImage {
+          responsiveImage(imgixParams: { fit: crop, w: 400, h: 400, auto: format }) {
+            src
+            width
+            height
+            alt
+          }
+        }
+        backgroundImage {
+          url
+        }
+        seoSettings {
+          title
+          description
+          image {
+            url
+          }
+        }
+      }
     }
-    headline
-    resumeLink {
-      url
-    }
-    linkedinLink
-    profileSummary
-  }
-}
-`;
+  `;
+  return datoCMSClient.request(QUERY);
+};
 
-export async function getProfileBanner(): Promise<ProfileBanner> {
-  const data = await datoCMSClient.request<{ profilebanner: ProfileBanner }>(GET_PROFILE_BANNER);
-  console.log("🚀 ~ getProfileBanner ~ data:", data)
-  return data.profilebanner;
-}
+export default getProfileBanner;

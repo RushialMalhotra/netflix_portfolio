@@ -1,28 +1,70 @@
 import React, { useEffect, useState } from 'react';
+import { fetchWorkPermitData } from '../queries/getWorkPermit';
 import './WorkPermit.css';
-import { getWorkPermit } from '../queries/getWorkPermit';
-import { WorkPermit as IWorkPermit } from '../types';
-const WorkPermit: React.FC = () => {
 
-  const [workPermitData, setWorkPermitData] = useState<IWorkPermit | null>(null);
+const WorkPermit: React.FC = () => {
+  const [permit, setPermit] = useState<any>(null);
+
   useEffect(() => {
-    async function fetchWorkPermitData() {
-      const data = await getWorkPermit();
-      setWorkPermitData(data);
-    }
-    fetchWorkPermitData();
+    fetchWorkPermitData().then(setPermit);
   }, []);
 
-  if (!workPermitData) return <div>Loading...</div>;
+  if (!permit)
+    return (
+      <div className="workpermit-page">
+        <div className="loading-text">Loading Work Permit details...</div>
+      </div>
+    );
+
+  const formattedDate = permit.validTill
+    ? new Date(permit.validTill).toLocaleDateString('en-GB', {
+        day: '2-digit',
+        month: 'long',
+        year: 'numeric',
+      })
+    : 'N/A';
 
   return (
-    <div className="work-permit-container">
-      <div className="work-permit-card">
-        <h2 className="work-permit-headline">🎓 Work Permit</h2>
-        <p className="work-permit-summary">
-          I'm currently on a <strong>{workPermitData.visaStatus}</strong> 🛂, which allows me to work in the UK! 🇬🇧 My visa is valid until <strong>{new Date(workPermitData.expiryDate).toLocaleDateString()}</strong> 📅, giving me the opportunity to build valuable experience and grow my career here. 🌟
-        </p>
-        <p className="additional-info">{workPermitData.additionalInfo}</p>
+    <div className="workpermit-page">
+      <div className="workpermit-card">
+        <div className="workpermit-header">
+          <h1>🎓 Work Permit</h1>
+          <p className="subtitle">
+            Proof of my legal right to work and build my career in the UK.
+          </p>
+        </div>
+
+        <div className="workpermit-intro">
+          <p>
+            I’m currently on a <strong>{permit.statusType}</strong>, issued by the{' '}
+            <strong>{permit.issuingAuthority}</strong>. This visa allows me to
+            work full-time anywhere in the <strong>Republic of Ireland</strong> without
+            requiring sponsorship — giving me the freedom to contribute
+            immediately and grow within a forward-thinking organization.
+          </p>
+        </div>
+
+        <div className="workpermit-details">
+          <div className="detail-row">
+            <span className="label">Visa Type:</span>
+            <span>{permit.visaDescription}</span>
+          </div>
+          <div className="detail-row">
+            <span className="label">Valid Until:</span>
+            <span>{formattedDate}</span>
+          </div>
+          <div className="detail-row">
+            <span className="label">Work Authorization Scope:</span>
+            <span>{permit.authorizationScope}</span>
+          </div>
+        </div>
+
+        <div className="workpermit-contact">
+          <p>
+            📞 For professional queries, reach me at{' '}
+            <a href={`tel:${permit.contactNumber}`}>{permit.contactNumber}</a>
+          </p>
+        </div>
       </div>
     </div>
   );

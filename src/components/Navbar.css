@@ -1,136 +1,166 @@
-/* Navbar.css */
-
-/* Main Navbar Styling */
+/* NAVBAR — Netflix-style refined version */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #fff;
   position: fixed;
-  width: 100%;
   top: 0;
-  background-image: linear-gradient(180deg, rgb(0 0 1 / 90%) 10%, transparent 100%);
-  padding: 20px;
-  z-index: 3;
-  transition: background-color 0.3s ease;
+  width: 100%;
+  padding: 16px 50px;
+  z-index: 10;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.85) 10%, transparent 100%);
+  color: #fff;
+  transition: background 0.4s ease, padding 0.3s ease;
 }
 
 .navbar.scrolled {
-  background-color: #141414; /* Netflix black when scrolled */
+  background: rgba(0, 0, 0, 0.95);
+  padding: 14px 45px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 }
 
-.navbar-left, .navbar-right {
+.navbar-left,
+.navbar-right {
   display: flex;
   align-items: center;
 }
 
 .navbar-logo img {
-  height: 30px;
-  margin-right: 30px;
-  margin-left: 10px;
-  margin-top: 5px;
+  height: 34px;
+  margin-right: 32px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-/* Navbar Links */
+.navbar-logo img:hover {
+  transform: scale(1.05);
+}
+
+/* NAV LINKS */
 .navbar-links {
   display: flex;
   list-style: none;
-  gap: 20px;
-  padding: 0;
+  gap: 26px;
   margin: 0;
+  padding: 0;
 }
 
 .navbar-links li a {
-  color: #fff;
+  color: #f5f5f5;
   text-decoration: none;
-  font-size: 1.05rem;
-  transition: color 0.3s;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1.08rem;
+  letter-spacing: 0.2px;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
 .navbar-links li a:hover {
-  color: #e50914; /* Netflix red */
+  color: #e50914;
 }
 
-/* Profile Icon */
+/* Optional subtle red underline animation */
+.navbar-links li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background-color: #e50914;
+  transition: width 0.3s ease;
+}
+
+.navbar-links li a:hover::after {
+  width: 100%;
+}
+
+/* PROFILE ICON */
 .profile-icon {
-  width: 30px;
-  height: 30px;
-  border-radius: 15%;
-  transition: transform 0.3s;
-  margin-right: 3rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 8%;
+  margin-right: 2.5rem;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-/* Hide the hamburger and sidebar in desktop view */
+.profile-icon:hover {
+  transform: scale(1.05);
+}
+
+/* --- MOBILE VIEW --- */
 .hamburger,
 .sidebar-overlay,
 .sidebar {
   display: none;
 }
 
-/* Mobile-specific styling */
 @media (max-width: 768px) {
+  .navbar {
+    padding: 10px 22px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 20%, transparent 100%);
+  }
+
   .navbar-logo img {
-    height: 20px;
+    height: 26px;
     margin-right: auto;
   }
-  .profile-icon {
-    width: 24px;
-    height: 24px;
-  }
 
-
-  /* Hide Navbar Links in Mobile */
   .navbar-links {
     display: none;
   }
 
-  /* Show Hamburger Menu */
+  .profile-icon {
+    width: 26px;
+    height: 26px;
+    margin-right: 1rem;
+  }
+
+  /* HAMBURGER */
   .hamburger {
     display: block;
     cursor: pointer;
+    z-index: 11;
   }
 
   .hamburger div {
-    width: 25px;
+    width: 26px;
     height: 3px;
     background-color: #fff;
-    margin: 4px;
+    margin: 5px;
     transition: 0.3s;
   }
 
-  /* Sidebar Overlay */
+  /* SIDEBAR OVERLAY */
   .sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 3;
     display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 9;
   }
 
   .sidebar-overlay.open {
     display: block;
   }
 
-  /* Sidebar Styling */
+  /* SIDEBAR */
   .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 70%;
-    background-color: #141414;
-    color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    background-color: #141414;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
-    z-index: 4;
+    z-index: 10;
   }
 
   .sidebar.open {
@@ -146,33 +176,26 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    width: 100%;
   }
+
   .sidebar ul li {
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    padding: 15px 0;
+    text-align: center;
   }
-  
+
   .sidebar ul li a {
+    font-size: 1.15rem;
     color: #fff;
     text-decoration: none;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  /* Close button inside the sidebar */
-  .hamburger-icon {
-    font-size: 1.5rem;
-    margin-right: 5px;
-  }
-
-  /* Sidebar adjustments */
-  .sidebar {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 8px;
+    transition: color 0.3s;
+  }
+
+  .sidebar ul li a:hover {
+    color: #e50914;
   }
 }

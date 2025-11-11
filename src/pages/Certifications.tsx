@@ -1,49 +1,63 @@
 import React, { useEffect, useState } from 'react';
 import './Certifications.css';
-import { FaExternalLinkAlt, FaUniversity } from 'react-icons/fa';
-import { SiUdemy, SiCoursera, SiIeee } from 'react-icons/si';
-import { Certification } from '../types';
-import { getCertifications } from '../queries/getCertifications';
-const iconData: { [key: string]: JSX.Element } = {
-  'udemy': <SiUdemy />,
-  'coursera': <SiCoursera />,
-  'ieee': <SiIeee />,
-  'university': <FaUniversity />
+import { fetchCertifications } from '../queries/getCertifications';
+
+interface Certification {
+  certificationName: string;
+  issuingOrganization: string;
+  issueDate: string;
+  credentialId: string;
+  credentialUrl: string;
+  skills?: string;
 }
 
 const Certifications: React.FC = () => {
+  const [certs, setCerts] = useState<Certification[]>([]);
 
-  const [certifications, setCertifications] = useState<Certification[]>([]);
-
-  useEffect(() => { 
-    async function fetchCertifications() {
-      const data = await getCertifications();
-      setCertifications(data);
-    }
-
-    fetchCertifications();
+  useEffect(() => {
+    fetchCertifications().then(setCerts);
   }, []);
 
-  if (certifications.length === 0) return <div>Loading...</div>;
+  if (!certs.length)
+    return (
+      <div className="certifications-container">
+        <p>Loading certifications...</p>
+      </div>
+    );
 
   return (
-    <div className="certifications-container">
-      <div className="certifications-grid">
-        {certifications.map((cert, index) => (
-          <a href={cert.link} key={index} target="_blank" rel="noopener noreferrer" className="certification-card" style={{ '--delay': `${index * 0.2}s` } as React.CSSProperties}>
-            <div className="certification-content">
-              <div className="certification-icon">{iconData[cert.iconName] || <FaUniversity />}</div>
-              <h3>{cert.title}</h3>
-              <p>{cert.issuer}</p>
-              {cert.issuedDate && <span className="issued-date">Issued {cert.issuedDate}</span>}
-            </div>
-            <div className="certification-link animated-icon">
-              <FaExternalLinkAlt />
+    <section className="cert-section">
+      <h2 className="cert-title">Licenses & Certifications</h2>
+      <div className="cert-container">
+        {certs.map((cert, idx) => (
+          <a
+            key={idx}
+            className="cert-card"
+            href={cert.credentialUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="cert-info">
+              <h3 className="cert-name">{cert.certificationName}</h3>
+              <p className="cert-org">{cert.issuingOrganization}</p>
+              <p className="cert-date">
+                Issued{' '}
+                {new Date(cert.issueDate).toLocaleString('en-GB', {
+                  month: 'short',
+                  year: 'numeric',
+                })}
+              </p>
+              {cert.credentialId && (
+                <p className="cert-id">Credential ID: {cert.credentialId}</p>
+              )}
+              {cert.skills && (
+                <p className="cert-skills">Skills: {cert.skills}</p>
+              )}
             </div>
           </a>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

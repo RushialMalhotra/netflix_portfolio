@@ -1,88 +1,172 @@
+/* ============================= */
+/* Profile Banner Layout */
+/* ============================= */
 .profile-banner {
   display: flex;
   align-items: flex-end;
   justify-content: left;
-  background-size: cover;
-  background-position: center;
-  color: #fff;
   position: relative;
-  padding-bottom: 0;
   width: 100%;
   height: 100%;
+  background-size: cover;
+  background-position: 50%;
+  color: #fff;
   overflow: hidden;
-  padding: 40px 20px 20px 20px;
+  padding: 40px 20px 20px;
 }
 
-.profile-banner::before {
-  content: "";
+/* Background video */
+.banner-video {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  opacity: 0.9;
 }
 
+/* Overlay gradient for visibility */
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.5) 25%,
+    rgba(0, 0, 0, 0.35) 50%,
+    rgba(0, 0, 0, 0.15) 85%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+  z-index: 1;
+}
+
+/* ============================= */
+/* Banner Content */
+/* ============================= */
 .banner-content {
   position: relative;
-  max-width: 1000px;
-  font-weight: bold;
+  z-index: 2;
   width: 100%;
-  padding: 50px 0px;
+  max-width: 1000px;
+  font-weight: 700;
+  padding: 10px 0 50px;
   box-sizing: border-box;
-  padding-top: 10px;
-  font-weight: bold;
 }
 
+/* ============================= */
+/* Headline and Description */
+/* ============================= */
 .banner-headline {
   font-size: 2.5rem;
   margin-bottom: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .banner-description {
-  font-size: 1rem;
-  margin-bottom: 20px;
   font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #e5e5e5;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+  max-width: 90%;
 }
 
+/* ============================= */
+/* Buttons Layout */
+/* ============================= */
 .banner-buttons {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
 }
 
-.banner-button {
-  display: flex;
+/* ============================= */
+/* Resume (Play) Button */
+/* ============================= */
+.play-button {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
+  background-color: #fff;
+  border: none;
+  border-radius: 4px;
+  color: #000;
+  cursor: pointer;
+  font-weight: 700;
   padding: 10px 20px;
-  border-radius: 5px;
-  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+.play-button:hover {
+  background-color: #e6e6e6;
+  transform: translateY(-2px);
+}
+
+.play-button .icon-container {
+  background: transparent;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.play-button svg {
+  fill: #000;
+  width: 20px;
+  height: 20px;
+}
+
+.play-button .label {
+  color: #000;
+  font-weight: 700;
+}
+
+/* ============================= */
+/* LinkedIn (More Info) Button – EXACT NETFLIX STYLE */
+/* ============================= */
+.more-info-button {
+  align-items: center;
+  background-color: #6d6d6eb3;
+  border: none;
+  border-radius: 4px;
   color: #fff;
-  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: 700;
+  padding: 10px 20px;
   transition: background-color 0.3s ease;
 }
 
-.play-button {
-  background-color: #e50914;
-}
-
-.info-button {
-  background-color: rgba(109, 109, 110, 0.7);
-}
-
-.banner-button:hover {
+.more-info-button:hover {
   background-color: #b81d24;
 }
 
+.more-info-button .icon-container {
+  background: transparent;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.more-info-button svg {
+  fill: #fff;
+  width: 20px;
+  height: 20px;
+}
+
+/* ============================= */
 /* Responsive Adjustments */
+/* ============================= */
 @media (max-width: 768px) {
-  .banner-content {
-    max-width: 100%;
-  }
   .profile-banner {
-    padding: 60px 20px;
     align-items: center;
     justify-content: center;
+    padding: 60px 20px;
   }
 
   .banner-headline {
@@ -91,21 +175,19 @@
   }
 
   .banner-description {
-    line-height: 1.5;
     font-size: 12px;
+    line-height: 1.5;
   }
 
-  /* Button adjustments */
   .banner-buttons {
-    display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
   }
 
-  .banner-button {
+  .play-button,
+  .more-info-button {
     width: auto;
     padding: 10px 15px;
     font-size: 0.9rem;
   }
 }
-

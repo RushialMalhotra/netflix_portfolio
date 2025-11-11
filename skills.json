@@ -1,0 +1,94 @@
+{
+  "items": [
+    {
+      "skillName": "Python",
+      "skillCategory": "Programming",
+      "skillLevel": 90,
+      "skillIconKey": "python"
+    },
+    {
+      "skillName": "R",
+      "skillCategory": "Programming",
+      "skillLevel": 85,
+      "skillIconKey": "r"
+    },
+    {
+      "skillName": "SQL",
+      "skillCategory": "Databases",
+      "skillLevel": 88,
+      "skillIconKey": "sql"
+    },
+    {
+      "skillName": "Tableau",
+      "skillCategory": "BI & Visualization",
+      "skillLevel": 90,
+      "skillIconKey": "tableau"
+    },
+    {
+      "skillName": "Power BI",
+      "skillCategory": "BI & Visualization",
+      "skillLevel": 86,
+      "skillIconKey": "powerbi"
+    },
+    {
+      "skillName": "Excel",
+      "skillCategory": "Tools",
+      "skillLevel": 92,
+      "skillIconKey": "excel"
+    },
+    {
+      "skillName": "Machine Learning",
+      "skillCategory": "Machine Learning",
+      "skillLevel": 84,
+      "skillIconKey": "machinelearning"
+    },
+    {
+      "skillName": "Deep Learning",
+      "skillCategory": "Machine Learning",
+      "skillLevel": 78,
+      "skillIconKey": "deeplearning"
+    },
+    {
+      "skillName": "Git",
+      "skillCategory": "Tools",
+      "skillLevel": 82,
+      "skillIconKey": "git"
+    },
+    {
+      "skillName": "HTML/CSS",
+      "skillCategory": "Programming",
+      "skillLevel": 80,
+      "skillIconKey": "htmlcss"
+    },
+    {
+      "skillName": "JavaScript",
+      "skillCategory": "Programming",
+      "skillLevel": 75,
+      "skillIconKey": "javascript"
+    },
+    {
+      "skillName": "Data Wrangling",
+      "skillCategory": "Data Engineering",
+      "skillLevel": 83,
+      "skillIconKey": "datawrangling"
+    },
+    {
+      "skillName": "ETL Pipelines",
+      "skillCategory": "Data Engineering",
+      "skillLevel": 81,
+      "skillIconKey": "etl"
+    },
+    {
+      "skillName": "Statistics",
+      "skillCategory": "Advanced Analytics",
+      "skillLevel": 88,
+      "skillIconKey": "statistics"
+    },
+    {
+      "skillName": "Business Intelligence",
+      "skillCategory": "BI & Visualization",
+      "skillLevel": 84,
+      "skillIconKey": "businessintelligence"
+    }
+  ]
+}

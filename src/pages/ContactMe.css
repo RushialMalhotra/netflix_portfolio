@@ -1,153 +1,108 @@
-.contact-container {
-  padding: 100px 20px;
-  background-color: #141414;
-  color: #e6e6e6;
-  text-align: center;
-  animation: fadeIn 0.8s ease-in-out;
-}
-
-.linkedin-badge-custom {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #222;
-  border-radius: 8px;
-  padding: 15px 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  color: #e6e6e6;
-  max-width: 350px;
-  margin: 0 auto;
-}
-
-.badge-avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  margin-right: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.badge-content {
-  text-align: left;
-}
-
-.badge-name {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin: 0;
-  color: #fff;
-}
-
-.badge-title {
-  font-size: 0.9rem;
-  margin: 0;
-  color: #aaa;
-}
-
-.badge-description {
-  font-size: 0.85rem;
-  margin: 5px 0;
-  color: #ccc;
-}
-
-.badge-company {
-  font-size: 0.85rem;
-  color: #888;
-}
-
-.badge-link {
-  display: inline-flex;
-  align-items: center;
-  background-color: #0077b5;
-  color: #fff;
-  padding: 8px 12px;
-  border-radius: 5px;
-  font-weight: bold;
-  text-decoration: none;
-  margin-top: 10px;
-  transition: background-color 0.3s ease;
-}
-
-.badge-link:hover {
-  background-color: #005983;
-}
-
-.linkedin-icon {
-  margin-right: 5px;
-}
-
-.contact-header p {
-  font-size: 1.2rem;
-  color: #ccc;
-  margin: 20px 0 30px;
-}
-
-.contact-details {
+.contact-wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: #1e1e1e;
-  padding: 10px 20px;
-  border-radius: 25px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.contact-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(214, 43, 43, 0.6);
-}
-
-.contact-icon {
-  font-size: 1.5rem;
-  color: #d62b2b;
-}
-
-.contact-link {
+  min-height: 90vh;
+  background: radial-gradient(circle at top, #1e1e1e, #000);
   color: #fff;
-  font-size: 1.1rem;
-  text-decoration: none;
+  padding: 4rem 1rem;
 }
 
-.contact-link:hover {
-  text-decoration: underline;
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(14px);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  padding: 3rem;
+  max-width: 950px;
+  width: 100%;
 }
 
-.contact-fun {
-  margin-top: 30px;
-  font-size: 1.2rem;
+.glass:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 40px rgba(229, 9, 20, 0.3);
+}
+
+.contact-card {
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: #e6e6e6;
+  padding: 2.5rem;
+  gap: 3rem;
+  max-width: 900px;
 }
 
-.coffee-icon {
-  font-size: 2rem;
-  color: #ff9900;
-  animation: swing 1s infinite ease-in-out;
+.contact-avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #e50914;
 }
 
-/* Animations */
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+.contact-content {
+  display: flex;
+  flex-direction: column;
 }
 
-@keyframes swing {
-  0%, 100% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(30deg);
-  }
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #e50914;
+  margin-bottom: 0.5rem;
+}
+
+.contact-subtitle {
+  font-size: 1.25rem;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.contact-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.25rem;
+  transition: color 0.3s;
+}
+
+.contact-links a:hover {
+  color: #e50914;
+}
+
+.contact-loading {
+  text-align: center;
+  color: #888;
+  padding: 4rem;
+  font-size: 1.5rem;
+}
+
+/* ✅ Dwight image section */
+.contact-footer {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.contact-footer img {
+  width: 320px;
+  max-width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  opacity: 0.9;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.contact-footer img:hover {
+  transform: scale(1.05);
+  opacity: 1;
 }
