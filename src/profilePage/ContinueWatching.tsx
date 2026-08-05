@@ -21,8 +21,10 @@ const continueWatchingConfig = {
     { title: "Contact Me", imgSrc: "https://picsum.photos/id/1029/300/200", link: "/contact-me" }
   ],
   stalker: [
+    { title: "Music", imgSrc: "https://picsum.photos/id/1025/300/200", link: "/music" },
     { title: "Reading", imgSrc: "https://picsum.photos/id/1026/300/200", link: "/reading" },
-    { title: "Contact Me", imgSrc: "https://picsum.photos/id/1029/300/200", link: "/contact-me" }
+    { title: "Contact Me", imgSrc: "https://picsum.photos/id/1029/300/200", link: "/contact-me" },
+    { title: "Certifications", imgSrc: "https://picsum.photos/id/1028/300/200", link: "/certifications" }
   ],
   adventure: [
     { title: "Music", imgSrc: "https://picsum.photos/id/1025/300/200", link: "/music" },
